@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Evaluate a News Article</title>
+    </head>
+
+    <body>
+        <header>
+            <div class="">
+                Logo
+            </div>
+            <div class="">
+                navigation
+            </div>
+        </header>
+
+        <main>
+            <section>
+                <h1>Evaluate the Tone of a News Article</h1>
+                <form class="" onsubmit="return Client.handleSubmit(event)">
+                    Enter the URL of a news article into this form to find out how positive and subjective it is.
+
+                    <input id="website" 
+                        type="text" 
+                        name="input" 
+                        placeholder="https://www.news-site.com/article-title">
+
+                    <button
+                        onclick="return Client.handleSubmit(event)" 
+                        onsubmit="return Client.handleSubmit(event)">Check article</button>
+                </form>
+            <section>
+
+            <section id="resultWrapper">
+                <h2>Article Overview</h2>
+                <div id="resultText"></div>
+                <div id="extract"></div>
+            </section>
+        </main>
+
+        <footer>
+            <p>This is a footer</p>
+        </footer>
+
+    </body>
+
+    <script>
+        // Check that service workers are supported
+        if ('serviceWorker' in navigator) {
+            // Use the window load event to keep the page load performant
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js');
+            });
+        }
+       </script>
+
+</html>
